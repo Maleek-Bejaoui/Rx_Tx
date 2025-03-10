@@ -25,10 +25,12 @@ module tt_um_top (
 //  wire _unused = &{ena, clk, rst_n, 1'b0};
   wire _unused = &{ena, 1'b0};
 
-  counter m_counter (
+  topVHDL m_topVHDL (
     .clk  (clk),    // Clock input
-    .rst  (!rst_n), // Reset input
-    .cmpt (uo_out)  // 8-bit counter output
+      .ena_in  (ena), // Reset input
+      .data_in (ui_in)  // 8-bit counter input
+      .data_out (uo_out)
+      .data_valid (
   );
 
 endmodule
