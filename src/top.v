@@ -30,7 +30,7 @@ module tt_um_top (
       .ena_in  (ena), // Reset input
       .data_in (ui_in) , // 8-bit counter input
       .data_out (uo_out),
-      .data_valid (uio_in)
+      .data_valid (uio_out)
   );
 
 endmodule
