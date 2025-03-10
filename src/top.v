@@ -28,19 +28,17 @@ module tt_um_top (
  
     wire data_valid;
 
-  // Affectation correcte de uio_out et uio_oe
-  assign uio_out[0] = data_valid;  // On met le signal valid sur uio_out[0]
-  assign uio_oe[0]  = 1'b1;        // On active la sortie uio_out[0] en sortie
-  assign uio_out[7:1] = 7'b0;      // Les autres sorties restent à 0
-  assign uio_oe[7:1]  = 7'b0;      // Les autres broches restent en entrée
+  assign uio_out[0] = data_valid;  
+  assign uio_oe[0]  = 1'b1;        
+  assign uio_out[7:1] = 7'b0;      
+  assign uio_oe[7:1]  = 7'b0;      
 
-  // Instanciation de topVHDL
   topVHDL m_topVHDL (
-    .clk       (clk),     // Clock input
-    .ena_in    (ui_in[0]), // Activation (au lieu de ena qui est toujours 1)
-    .data_in   (ui_in),   // 8-bit Data input
-    .data_out  (uo_out),  // 8-bit Data output
-    .data_valid(data_valid) // Data valid signal
+    .clk       (clk),     
+    .ena_in    (ui_in[0]), 
+    .data_in   (ui_in),  
+    .data_out  (uo_out),  
+    .data_valid(data_valid) 
   );
 
 endmodule
