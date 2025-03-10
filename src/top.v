@@ -28,9 +28,9 @@ module tt_um_top (
   topVHDL m_topVHDL (
     .clk  (clk),    // Clock input
       .ena_in  (ena), // Reset input
-      .data_in (ui_in)  // 8-bit counter input
-      .data_out (uo_out)
-      .data_valid (
+      .data_in (ui_in) , // 8-bit counter input
+      .data_out (uo_out),
+      .data_valid (uio_in(1))
   );
 
 endmodule
